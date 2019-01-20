@@ -1,46 +1,25 @@
 /**
- * WAP to
+ * WAP to find LCM of two numbers.
  */
- #include<stdio.h>
- int main()
- {
-     int first,second,i=1;
-     printf("Enter the number : ");
-     scanf("%d",&first);
-     printf("Enter the number : ");
-     scanf("%d",&second);
-     while(first%2==0||second%2==0)
-     {
-         printf("2\n");
-         i=i*2;
-         first=first/2;
-         second=second/2;
-     }
-     while(first%3==0||second%3==0)
-     {
-         printf("3\n");
-         i=i*3;
-         first=first/3;
-         second=second/3;
-     }
-     while(first%5==0||second%5==0)
-     {
-         printf("5\n");
-         i=i*5;
-         first=first/5;
-         second=second/5;
-     }
-     while(first%7==0||second%7==0)
-     {
-         printf("7\n");
-         i=i*7;
-         first=first/7;
-         second=second/7;
-     }
+ #include <stdio.h>
+int main()
+{
+    int n1, n2, minMultiple;
+    printf("Enter two positive integers: ");
+    scanf("%d %d", &n1, &n2);
 
-    // printf("%d",first);
-    // printf("\n%d",second);
-     //i=i*first*second;
-     printf("\n%d",i);
-     return 1;
- }
+    // maximum number between n1 and n2 is stored in minMultiple
+    minMultiple = (n1>n2) ? n1 : n2;
+
+    // Always true
+    while(1)
+    {
+        if( minMultiple%n1==0 && minMultiple%n2==0 )
+        {
+            printf("The LCM of %d and %d is %d.", n1, n2,minMultiple);
+            break;
+        }
+        ++minMultiple;
+    }
+    return 0;
+}

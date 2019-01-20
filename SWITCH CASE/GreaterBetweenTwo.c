@@ -5,24 +5,18 @@
  #include<stdio.h>
  int main(void)
  {
-     int a,b,c;
+     int a,b;
      printf("Enter the value of A and B :\n");
      scanf("%d%d",&a,&b);
-     if(a>b)
-        c=1;
-     else if(b>a)
-        c=2;
-     else
-        c=3;
-     switch(c)
+     switch(a>b)
      {
      case 1:
         printf("A is greater.");
         break;
-     case 2:
+     case 0:
         printf("B is greater.");
         break;
-     case 3:
+     default:
         printf("Equal.");
         break;
     }
